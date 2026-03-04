@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Linux_kings – Konto</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <style>
+    .auth-container {
+      display:flex; justify-content:center; align-items:center;
+      min-height:80vh;
+    }
+    .auth-box {
+      width:400px; padding:2rem;
+      background:var(--bg-light); border-radius:8px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
+    .auth-box h2 { text-align:center; margin-bottom:1rem; }
+    .auth-box label { display:block; margin-bottom:.75rem; }
+    .auth-box input { width:100%; padding:.5rem; margin-top:.25rem; border:1px solid #ccc; border-radius:4px; }
+    .auth-actions { display:flex; justify-content:space-between; font-size:14px; margin-top:.5rem; }
+    .auth-box button { width:100%; margin-top:1rem; }
+  </style>
+
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Linux_kings</a>
+      <nav>
+        <ul class="nav-list grouped">
+          <!-- Grupa 1: Home + Sklep (tylko Sklep z ikoną) -->
+          <li class="nav-group">
+            <a href="index.html">Strona główna</a>
+            <li class="dropdown">
+              <a href="jerseys.html">Sklep</a>
+              <ul class="dropdown-menu">
+                <li><a href="jerseys.html?type=koszulka">Koszulki</a></li>
+                <li><a href="jerseys.html?type=longsleeve">Longsleeve</a></li>
+                <li><a href="jerseys.html?type=bluza">Bluzy</a></li>
+                <li><a href="jerseys.html?type=spodenki">Spodenki</a></li>
+                <li><a href="jerseys.html?type=akcesoria">Akcesoria</a></li>
+              </ul>
+            </li>
+          </li>
+          <li class="divider">|</li>
+          <!-- Grupa 2: Matches + Team (bez ikon) -->
+          <li class="nav-group">
+            <a href="matches.html">Rozgrywki</a>
+            <a href="team.html">Drużyna</a>
+          </li>
+          <li class="divider">|</li>
+          <!-- Grupa 3: Koszyk, Konto, Contact, Ustawienia (wszystkie z ikonami) -->
+          <li class="nav-group">
+            <a href="koszyk.html" class="cart-link">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-badge" id="cartCount">0</span>
+              Koszyk
+            </a>
+            <a href="konto.html"><i class="icon-user"></i> Konto</a>
+            <a href="contact.html"><i class="icon-contact"></i> Kontakt</a>
+            <a href="ustawienia.html"><i class="icon-settings"></i> Ustawienia</a>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+    <nav class="mobile-nav">
+      <button class="hamburger" aria-label="Otwórz menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="mobile-nav__list">
+        <li><a href="index.html">Strona główna</a></li>
+        <li><a href="jerseys.html">Sklep</a></li>
+        <li><a href="matches.html">Rozgrywki</a></li>
+        <li><a href="team.html">Drużyna</a></li>
+        <li><a href="koszyk.html">Koszyk</a></li>
+        <li><a href="konto.html">Konto</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+        <li><a href="ustawienia.html">Ustawienia</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+
+  <main class="auth-container">
+    <div class="auth-box" id="login-box">
+      <h2>Witamy!</h2>
+      <form>
+        <label>Login:
+          <input type="text" name="login" required>
+        </label>
+        <label>Hasło:
+          <input type="password" name="password" required>
+        </label>
+        <button type="submit" class="btn btn-primary">Zaloguj się</button>
+      </form>
+      <div class="auth-actions">
+        <a href="#forgot">Nie pamiętam hasła</a>
+        <a href="#register">Zarejestruj się</a>
+      </div>
+      <p style="font-size:12px; margin-top:1rem;">
+        Korzystając z serwisu akceptujesz <a href="#regulamin">regulamin</a>.
+      </p>
+    </div>
+    <button onclick="topFunction()" id="Btn" title="Go to top">^</button>
+  </main>
+
+  <footer class="site-footer">© 2025 Linux_kings</footer>
+</body>
+</html>

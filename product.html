@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Linux_kings – Szczegóły Produktu</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Linux_kings</a>
+      <nav>
+        <ul class="nav-list grouped">
+          <!-- Grupa 1: Home + Sklep (tylko Sklep z ikoną) -->
+          <li class="nav-group">
+            <a href="index.html">Strona główna</a>
+            <li class="dropdown">
+              <a href="jerseys.html">Sklep</a>
+              <ul class="dropdown-menu">
+                <li><a href="jerseys.html?type=koszulka">Koszulki</a></li>
+                <li><a href="jerseys.html?type=longsleeve">Longsleeve</a></li>
+                <li><a href="jerseys.html?type=bluza">Bluzy</a></li>
+                <li><a href="jerseys.html?type=spodenki">Spodenki</a></li>
+                <li><a href="jerseys.html?type=akcesoria">Akcesoria</a></li>
+              </ul>
+            </li>
+          </li>
+          <li class="divider">|</li>
+          <!-- Grupa 2: Matches + Team (bez ikon) -->
+          <li class="nav-group">
+            <a href="matches.html">Rozgrywki</a>
+            <a href="team.html">Drużyna</a>
+          </li>
+          <li class="divider">|</li>
+          <!-- Grupa 3: Koszyk, Konto, Contact, Ustawienia (wszystkie z ikonami) -->
+          <li class="nav-group">
+            <a href="koszyk.html" class="cart-link">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-badge" id="cartCount">0</span>
+              Koszyk
+            </a>
+            <a href="konto.html"><i class="icon-user"></i> Konto</a>
+            <a href="contact.html"><i class="icon-contact"></i> Kontakt</a>
+            <a href="ustawienia.html"><i class="icon-settings"></i> Ustawienia</a>
+          </li>
+        </ul>
+      </nav>
+      
+    </div>
+    <nav class="mobile-nav">
+      <button class="hamburger" aria-label="Otwórz menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="mobile-nav__list">
+        <li><a href="index.html">Strona główna</a></li>
+        <li><a href="jerseys.html">Sklep</a></li>
+        <li><a href="matches.html">Rozgrywki</a></li>
+        <li><a href="team.html">Drużyna</a></li>
+        <li><a href="koszyk.html">Koszyk</a></li>
+        <li><a href="konto.html">Konto</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+        <li><a href="ustawienia.html">Ustawienia</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+
+  <nav class="breadcrumbs">
+    <a href="index.html"><i class="icon-home"></i></a>
+    <span class="separator">›</span>
+    <a href="jerseys.html">Sklep</a>
+    <span class="separator">›</span>
+    <span class="current"></span>
+  </nav>
+
+  <main>
+    <!-- WYDZIELONA SEKCJA – GŁÓWNE ZDJĘCIE + KRÓTKI OPIS -->
+    <section class="product-detail-wrapper">
+      <div class="thumbnails"></div>
+      <div class="main-image"><img src="" alt=""></div>
+      <div class="product-info">
+        <h1></h1>
+        <p class="pattern"></p>
+        <p class="price"></p>
+        <div class="size-options"></div>
+        <p class="short-desc"></p>
+        <button class="btn-buy" id="myBtn">Kup teraz</button>
+        
+      </div>
+    </section>
+
+    <!-- SEKCJA ROZBUDOWANEGO OPISU -->
+    <section class="description-section">
+      <h2>Opis produktu</h2>
+      <p class="long-desc"></p>
+    </section>
+
+    <!-- NOWA SEKCJA MATERIAŁ -->
+    <section class="material-section">
+      <h2>Materiał</h2>
+      <ul class="material-list"></ul>
+    </section>
+
+    <!-- SEKCJA TABELI ROZMIARÓW -->
+    <section class="size-table-section">
+      <h2>Tabela rozmiarów</h2>
+      <table class="size-table">
+        <thead><tr id="sizeTableHeader"></tr></thead>
+        <tbody id="sizeTableBody"></tbody>
+      </table>
+      <p class="size-table-note" id="sizeTableNote"></p>
+    </section>
+    
+    <button onclick="topFunction()" id="Btn" title="Go to top">^</button>
+ 
+  </main>
+
+   <script src="js/products.js"></script>
+
+  <!-- 2) Cart API -->
+  <script src="js/cart.js"></script>
+
+  <!-- 3) Ogólny script (slider, kalendarz...) -->
+  <script src="js/script.js"></script>
+
+  <!-- 4) Inline: podłączenie Kup teraz → addToCart -->
+
+
+
+<!-- Modal “Dodano do koszyka” -->
+<div id="addCartModal" class="modal">
+  <div class="modal-content animate-down">
+    <span class="modal-close">&times;</span>
+    <p>Dodano do koszyka!</p>
+
+    <section class="modal-recommended">
+      <h3>Polecane produkty</h3>
+      <div id="modalRecommended" class="recommended-grid"></div>
+    </section>
+
+    <div class="modal-buttons">
+      <button id="continueBtn" class="btn">Kontynuuj zakupy</button>
+      <button id="goCartBtn" class="btn btn-primary">Przejdź do koszyka</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
