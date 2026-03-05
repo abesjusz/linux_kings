@@ -14,23 +14,35 @@
   height: 100px;
  } 
 </style>
-<body>
-  <!-- HEADER -->
+<body style="
+background-image: url('banery/strona-59.jpg'); 
+background-size: cover; 
+background-position: center; 
+background-attachment: fixed; 
+background-repeat: no-repeat;
+">
+  <!-- HEADER 
+   style="
+background-image: url('banery/strona-59.jpg'); 
+background-size: cover; 
+background-position: center; 
+background-attachment: fixed; 
+background-repeat: no-repeat;
+"
+  
+  
+  -->
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo">Linux_kings</a>
       <nav>
         <ul class="nav-list grouped">
-          <!-- Grupa 1: Home + Sklep (tylko Sklep z ikoną) -->
           <li class="nav-group">
           </li>
-          <!-- Grupa 2: Matches + Team (bez ikon) -->
           <li class="nav-group">
             <a href="team.html"></a>
-            <a href="contact.html"><i class="icon-contact"></i> </a>
           </li>
           <li class="divider">|</li>
-          <!-- Grupa 3: Koszyk, Konto, Contact, Ustawienia (wszystkie z ikonami) -->
           <li class="nav-group">
             <li class="dropdown">
               <a href="jerseys.html"></a>
@@ -61,7 +73,6 @@
       </button>
       <ul class="mobile-nav__list">
         <li><a href="team.html">Drużyna</a></li>
-        <li><a href="contact.html">Kontakt</a></li>
         <hr class="mobile-divider">
         <li><a href="jerseys.html">Sklep</a></li>
         <li><a href="koszyk.html">Koszyk</a></li>
@@ -75,12 +86,11 @@
   <main>
     <!-- SPLIT-SCREEN TEAM HEADER -->
     <section class="team-header">
-      <div class="team-photo">
-        <!-- 50% width, height:600px -->
-        <img src="banery/strona-57.jpg" alt="Linux_kings na turnieju">
-      </div>
-      <div class="team-intro">
-       
+      <div class="team-intro" style="background-color: white;  border: 5px solid white; border-radius: 25px;">
+        <p  style="line-height: 1.8; font-size: 22px; color: #0A001C; " >Wszystko zaczęło się w szkolnych ławkach technikum. To właśnie tam, między zajęciami a projektami, narodziła się idea <strong>Linux Kings</strong>. Zaczęło się od wspólnej pasji, pierwszych szkiców logo w zeszytach i setek godzin spędzonych na serwerach. Nie szukaliśmy blasku fleszy ani wielkich pucharów – od początku stawialiśmy na czystą zajawkę.
+          Naszą areną był i jest <strong>FaceIT</strong> oraz amatorskie potyczki, gdzie liczy się każdy celny strzał i dobra komunikacja. Nigdy nie celowaliśmy w esportowe szczyty, bo dla nas gaming to przede wszystkim dobra zabawa w gronie znajomych. Gramy dla fanu, bez presji na wyniki, celebrując każdą wspólną akcję.
+          Linux Kings to ekipa otwarta na każdego, kto ceni luz i wspólną grę. Nieważne, czy wykręcasz życiowe statystyki, czy po prostu chcesz pograć po szkole lub pracy – u nas zawsze znajdzie się miejsce dla kolejnego gracza. <strong>Wbijaj do nas i grajmy razem!</strong></p>
+      <!--
         <p>Linux_kings to historia pasji, determinacji i ciągłego rozwoju. Zespół oficjalnie zarejestrował się w ligach amatorskich już 30 listopada 2020 roku, a zaledwie miesiąc później zadebiutował w pierwszym turnieju online. Już w marcu 2021 świętowaliśmy pierwsze zwycięstwo – triumf w Turnieju Amatorów dał nam pewność, że obieramy dobrą drogę. W kwietniu tego samego roku wzmocniliśmy skład o nowego riflera, a latem awansowaliśmy do ligi półprofesjonalnej, gdzie jesienią 2021 zanotowaliśmy Top 8 na pierwszym LAN-ie i podpisaliśmy nasz pierwszy kontrakt sponsorski.
 
           Rok 2022 przyniósł nam wzloty i upadki – po spadku z ligi półprofesjonalnej na początku roku intensywnie przebudowaliśmy roster i już w kwietniu wróciliśmy do wyższej dywizji. Pod koniec wiosny odświeżyliśmy wizerunek drużyny, prezentując nowe logo, a latem stanęliśmy na podium międzynarodowego turnieju – to był nasz pierwszy duży sukces online. Jesienią dokonaliśmy kolejnej kluczowej zmiany: nowy kapitan poprowadził nas do historycznego finału ligi, zakończonego na drugim miejscu.
@@ -88,19 +98,26 @@
           Wiosną 2023 nasi zawodnicy święcili indywidualne triumfy – snajper zdobył tytuł MVP Spring Showcase, a przed sezonem podpisaliśmy kluczowe kontrakty z trzonem składu. W lipcu 2023 awansowaliśmy do elitarnej ligi głównej i w debiutanckim sezonie uplasowaliśmy się na piątej pozycji. Jesienią dołożyliśmy do kolekcji zwycięstwo w charytatywnym Goodwill Cup, a na początku 2024 powitaliśmy nowego head-coacha, który poprowadził nas aż do półfinałów prestiżowej Ligi Mistrzów.
           
           Latem 2024 zadebiutowała nasza Linux_kings Academy – program szkoleniowy dla młodych talentów, a tuż po wakacjach sięgnęliśmy po puchar Summer Showdown. Choć jesienią musieliśmy zmierzyć się z degradacją, to już na przełomie roku – po drugim rebrandingu i nowej stronie – wróciliśmy do ligi głównej i od razu obroniliśmy tytuł Blizzard Cup. Na dzień dzisiejszy, przygotowujemy się do sezonu 2025/2026, prezentując pełny skład i ambitny plan na kolejne zwycięstwa.</p>
+        -->
+        </div>
+      <div class="team-photo">
+        <!-- 50% width, height:600px 
+        <img src="banery/strona-57.jpg" alt="Linux_kings na turnieju"> 
+        <img src="banery/strona-57.jpg" alt="Linux_kings na turnieju"> -->
       </div>
+  
     </section>
 
     <div class="gap"></div>
 
-    <!-- TIMELINE SECTION -->
+    <!-- TIMELINE SECTION
     <section class="timeline-container">
       <h2>Kamienie milowe</h2>
       <div class="timeline-bar" id="timelineBar">
-        <!-- Punkty będą wstrzykiwane przez JS -->
       </div>
       <div class="timeline-tooltip" id="timelineTooltip"></div>
     </section>
+  -->
     <button onclick="topFunction()" id="Btn" title="Go to top">^</button>
   </main>
 

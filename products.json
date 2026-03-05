@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1",
+    "name": "T-Shirt Ultra Light wzór 1",
+    "price": 139.99,
+    "type": "koszulki",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "mainImage": "produkty/produkt-38.png",
+    "images": [],
+    "description": "Biegowy t-shirt ultra lekki w całości wykonany z elastycznej siatki. Koszulka jest przewiewna, lekka oraz doskonale oddychająca. Dzięki dużej ilości elastanu koszulka idealnie dopasowuje się do ciała, nie krępując przy tym ruchów. Zastosowane siatki gwarantuje stałą wentylację i cyrkulację powietrza między skórą a materiałem i schnięciem koszulki jeszcze na ciele.",
+    "sizeTable": "<table>\n<tbody>\n<tr>\n<td colspan=\"7\">Ultra lekki męski t-shirt</td>\n</tr>\n<tr>\n<td>Rozmiar</td>\n<td>S</td>\n<td>M</td>\n<td>L</td>\n<td>XL</td>\n<td>XXL</td>\n<td>XXXL</td>\n</tr>\n<tr>\n<td>Przy obwodzie klatki piersiowej proponujemy rozmiar</td>\n<td>78-84</td>\n<td>84-90</td>\n<td>90-98</td>\n<td>98-106</td>\n<td>106-114</td>\n<td>114-124</td>\n</tr>\n<tr>\n<td>Obwód koszulki w klatce piersiowej</td>\n<td>92</td>\n<td>98</td>\n<td>104</td>\n<td>110</td>\n<td>116</td>\n<td>122</td>\n</tr>\n<tr>\n<td>Obwód koszulki w talii</td>\n<td>91</td>\n<td>97</td>\n<td>103</td>\n<td>109</td>\n<td>115</td>\n<td>121</td>\n</tr>\n<tr>\n<td>Obwód koszulki na dole</td>\n<td>94</td>\n<td>100</td>\n<td>106</td>\n<td>112</td>\n<td>118</td>\n<td>124</td>\n</tr>\n<tr>\n<td>Długość koszulki z tyłu od szyi</td>\n<td>62,5</td>\n<td>65</td>\n<td>67,5</td>\n<td>70</td>\n<td>72,5</td>\n<td>75</td>\n</tr>\n<tr>\n<td>Długość boku od pachy</td>\n<td>38</td>\n<td>40</td>\n<td>41,5</td>\n<td>43</td>\n<td>44,5</td>\n<td>46</td>\n</tr>\n<tr>\n<td>Długość rękawa od pachy</td>\n<td>11,5</td>\n<td>12</td>\n<td>12,5</td>\n<td>13</td>\n<td>13,5</td>\n<td>14</td>\n</tr>\n<tr>\n<td colspan=\"7\">Wymiary podane w tabeli mogą się różnić o +/- 2 cm. </td>\n</tr>\n</tbody>\n</table>"
+  }
+]

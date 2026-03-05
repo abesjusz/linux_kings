@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Linux_kings – Home</title>
-  <!-- Font-Awesome 6 Free CSS -->
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,58 +12,20 @@ crossorigin="anonymous"
 referrerpolicy="no-referrer"
 />
 <link rel="stylesheet" href="css/style.css">
-<!--<link rel="stylesheet" href="css/style-mobile.css" media="(max-width: 768px)">-->
-
 </head>
 <body>
-  <!-- HEADER 
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo">Linux_kings</a>
-      <nav>
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li class="dropdown">
-            <a href="jerseys.html">Sklep</a>
-            <ul class="dropdown-menu">
-              <li><a href="jerseys.html?type=koszulka">Koszulki</a></li>
-              <li><a href="jerseys.html?type=bluza">Bluzy</a></li>
-              <li><a href="jerseys.html?type=spodenki">Spodenki</a></li>
-              <li><a href="jerseys.html?type=akcesoria">Akcesoria</a></li>
-            </ul>
-          </li>
-          <li><a href="matches.html">Matches</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="koszyk.html">Koszyk</a></li>
-          <li><a href="konto.html">Konto</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="ustawienia.html">Ustawienia</a></li>
-
-        </ul>
-      </nav>
-      
-      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-    </div>
-  </header>
-
-  <i class="icon-shop"></i>
--->
 
 <header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="logo">Linux_kings</a>
     <nav>
       <ul class="nav-list grouped">
-        <!-- Grupa 1: Home + Sklep (tylko Sklep z ikoną) -->
         <li class="nav-group">
         </li>
-        <!-- Grupa 2: Matches + Team (bez ikon) -->
         <li class="nav-group">
           <a href="team.html"></a>
-          <a href="contact.html"><i class="icon-contact"></i> </a>
         </li>
         <li class="divider">|</li>
-        <!-- Grupa 3: Koszyk, Konto, Contact, Ustawienia (wszystkie z ikonami) -->
         <li class="nav-group">
           <li class="dropdown">
             <a href="jerseys.html"></a>
@@ -95,7 +56,6 @@ referrerpolicy="no-referrer"
     </button>
     <ul class="mobile-nav__list">
       <li><a href="team.html">Drużyna</a></li>
-      <li><a href="contact.html">Kontakt</a></li>
       <hr class="mobile-divider">
       <li><a href="jerseys.html">Sklep</a></li>
       <li><a href="koszyk.html">Koszyk</a></li>
@@ -125,83 +85,28 @@ referrerpolicy="no-referrer"
     </section>
     <div class="hero-separator"></div>
 
-    <!--
-    <section class="two-banners">
-      <a href=""><img src="banery/strona-11.jpg"></a>
-      <a href="matches.html"><img src="banery/strona-13.jpg"></a>
-    </section>
-  -->
-
-
   <h2 class="tytuly">NASZE KATEGORIE</h2>
   <section class="three-banners">
-    <a href="league.html" class="banner"><img src="banery/strona-40.jpg" ></a>
-    <a href="jerseys.html"  class="banner"><img src="banery/strona-41.jpg"  ></a>
-    <a href="team.html"  class="banner"><img src="banery/strona-39.jpg"  ></a>
+    <a href="matches.html" class="banner"><img src="banery/strona-40.jpg"></a>
+    <a href="jerseys.html"  class="banner"><img src="banery/strona-60.jpg"></a>
+    <a href="team.html"  class="banner"><img src="banery/strona-39.jpg" ></a>
   </section>
 
+  
+
+
+
     
+
     <section class="product-carousel">
       <h2 class="tytuly">POLECAMY</h2>
       <div class="carousel-track" id="carouselTrack"></div>
     </section>
+  
 
 
 
 
-    
-
-
-
-
-    <!-- PROMO BANNER pod karuzelą 
-    <section class="promo-banner">
-      <img src="banery/strona-19.jpg" alt="Specjalna promocja">
-    </section>
-
-  -->
-
-    <!-- LIGA 
-    <section class="league-section">
-      <h2 id="leagueTitle">Liga</h2>
-      <p class="league-intro">Poniżej tabela ligowa wraz ze statystykami.</p>
-      <table class="league-table">
-        <thead>
-          <tr>
-            <th>Pozycja</th>
-            <th>Drużyna</th>
-            <th>Punkty</th>
-            <th>K/D</th>
-            <th>% Wygranych</th>
-            <th>Śr. DMG</th>
-          </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
-      
-    </section>
-
-
-    <section class="our-matches">
-      <h2>Nasze mecze</h2>
-      <table class="matches-table">
-        <thead>
-          <tr><th>Data</th><th>Przeciwnik</th><th>Wynik</th><th>Mapa</th></tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
-    </section>
-  -->
-
-    <!-- SPONSOR BANNER pod tabelami 
-    <section class="sponsor-banner">
-      <img src="banery/strona-35.jpg" alt="Sponsor">
-    </section>
-  -->
     <button onclick="topFunction()" id="Btn" title="Go to top">^</button>
   </main>
 
@@ -209,7 +114,6 @@ referrerpolicy="no-referrer"
 
 
   <section class="info-section">
-    <!-- LEWY PANEL: Regulamin (zawsze otwarty) -->
     <div class="legal-panel">
       <h2>Regulamin serwisu</h2>
       <div class="legal-content">
@@ -223,8 +127,7 @@ referrerpolicy="no-referrer"
         <p>Pełna treść regulaminu dostępna w dokumencie PDF.</p>
       </div>
     </div>
-  
-    <!-- PRAWY PANEL: Newsletter -->
+
     <div class="newsletter-panel">
       <h2>Zapisz się do Newslettera</h2>
       <p>Otrzymuj najnowsze informacje o produktach i meczach.</p>
@@ -248,7 +151,7 @@ referrerpolicy="no-referrer"
     © 2025 Linux_kings. All rights reserved.
   </footer>
 
-  <!-- SCRIPTS -->
+
   <script src="js/slider.js"></script>
   <script src="js/league.js"></script>
   <script src="js/script.js"></script>
