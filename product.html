@@ -78,9 +78,17 @@
         <h1></h1>
         <p class="pattern"></p>
         <p class="price"></p>
-        <div class="size-options"></div>
         <p class="short-desc"></p>
-        <button class="btn-buy" id="myBtn">Kup teraz</button>
+        <div id="product-variants" class="product-variants">
+          <!-- JS wstawi tutaj select/przyciski rozmiarow -->
+        </div>
+      
+        <!-- Przycisk dodaj do koszyka -->
+        <div style="margin-top:12px">
+          <button id="addToCartBtn" class="btn">Dodaj do koszyka</button>
+          <span id="product-msg" style="margin-left:12px;color:#c00"></span>
+        </div>
+      </div>
         
       </div>
     </section>
@@ -117,6 +125,8 @@
   <script src="js/cart.js"></script>
 
   <!-- 3) Ogólny script (slider, kalendarz...) -->
+  <script src="js/product-page.js"></script>
+  <script src="js/compat.js"></script> 
   <script src="js/script.js"></script>
   <script src="js/menu.js"></script>
 
@@ -124,23 +134,41 @@
 
 
 
-<!-- Modal “Dodano do koszyka” -->
-<div id="addCartModal" class="modal">
-  <div class="modal-content animate-down">
-    <span class="modal-close">&times;</span>
-    <p>Dodano do koszyka!</p>
+<!-- BEGIN: cart-added-modal (podmień stary fragment) -->
+<div id="cart-added-modal" class="cart-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cartModalTitle">
+  <div class="modal-overlay" data-modal-close></div>
 
-    <section class="modal-recommended">
-      <h3>Polecane produkty</h3>
-      <div id="modalRecommended" class="recommended-grid"></div>
+  <div class="modal-window" role="document">
+    <button class="modal-close" aria-label="Zamknij" data-modal-close>✕</button>
+
+    <header class="modal-header">
+      <div class="modal-notice" id="cartModalTitle">Produkt dodany do koszyka!</div>
+      <div class="added-info">
+        <img class="added-img" src="" alt="" data-placeholder="banery/placeholder.jpg">
+        <div class="added-meta">
+          <div class="added-name" style="font-weight:700"></div>
+
+        </div>
+      </div>
+    </header>
+
+    <section class="modal-body">
+      <div class="rec-head" style="font-weight:700;margin-bottom:8px">Polecane produkty</div>
+
+      <div class="rec-wrap">
+        <button class="rec-prev" aria-label="Poprzednie polecane">‹</button>
+        <div class="rec-track" role="list" aria-live="polite"></div>
+        <button class="rec-next" aria-label="Następne polecane">›</button>
+      </div>
     </section>
 
-    <div class="modal-buttons">
-      <button id="continueBtn" class="btn">Kontynuuj zakupy</button>
-      <button id="goCartBtn" class="btn btn-primary">Przejdź do koszyka</button>
-    </div>
+    <footer class="modal-footer">
+      <button class="btn ghost" data-modal-close>Kontynuuj zakupy</button>
+      <a href="koszyk.html" class="btn primary">Pokaż koszyk</a>
+    </footer>
   </div>
 </div>
+<!-- END: cart-added-modal -->
 
 </body>
 </html>

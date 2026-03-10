@@ -73,7 +73,39 @@ referrerpolicy="no-referrer"
 
   <main>
 
-    
+
+<!-- BEGIN: hero slider (zamień istniejący hero) -->
+<section id="heroSlider" class="hero-slider" role="region" aria-label="Baner główny">
+  <!-- statyczny pierwszy slide (fallback/no-js) -->
+  <div class="hero-slide hero-slide--active" aria-hidden="false" data-index="0"
+       style="background-image: url('banery/strona-61.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" aria-live="polite">
+      <h1 class="hero-title">Witamy w Linux Kings</h1>
+      <p class="hero-sub">Sklep, rozgrywki i koszulki — poznaj naszą drużynę.</p>
+    </div>
+  </div>
+
+  <!-- kontener na wygenerowane slajdy (JS dopisze kolejne) -->
+  <div class="hero-slides" aria-hidden="true"></div>
+
+  <!-- CTA -->
+  <div class="hero-cta-wrap">
+    <a id="heroCta" class="hero-cta" href="/sklep">Przejdź do sklepu</a>
+  </div>
+
+  <!-- controls -->
+  <div class="hero-controls" aria-hidden="false">
+    <button class="hero-prev" aria-label="Poprzedni slajd">‹</button>
+    <div class="hero-dots" role="tablist" aria-label="Wybierz slajd"></div>
+    <button class="hero-next" aria-label="Następny slajd">›</button>
+  </div>
+</section>
+<!-- END: hero slider -->
+
+
+
+<!--
     <section class="hero" style="background-image:url('banery/strona-61.jpg')">
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -83,6 +115,10 @@ referrerpolicy="no-referrer"
         <p style="margin-top: 40px; font-size: 25px;">Oficjalna strona</p>
       </div>
     </section>
+
+  -->
+
+
     <div class="hero-separator"></div>
 
   <h2 class="tytuly">NASZE KATEGORIE</h2>
@@ -154,10 +190,12 @@ referrerpolicy="no-referrer"
 
   <script src="js/slider.js"></script>
   <script src="js/league.js"></script>
+  <script src="js/compat.js"></script> 
   <script src="js/script.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/mobile.js"></script>
+  <script src="js/hero-slider.js"></script>
 
 </body>
 </html>

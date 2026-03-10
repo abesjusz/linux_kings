@@ -93,72 +93,108 @@
   <!-- skrypty: najpierw products.js, potem cart.js, potem to: -->
   <script src="js/products.js"></script>
   <script src="js/cart.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', renderCart);
-    
-    function renderCart() {
-      const cart      = getCart();
-      const itemsWrap = document.getElementById('cartItems');
-      const sumWrap   = document.getElementById('cartSummary');
-      itemsWrap.innerHTML = '';
-      sumWrap.innerHTML   = '';
-    
-      let total = 0;
-    
-      // Lewa kolumna: kafelki
-      cart.forEach(({ id, qty }) => {
-        const p = PRODUCTS.find(x => x.id === id);
-        if (!p) return;
-        const lineTotal = p.price * qty;
-        total += lineTotal;
-    
-        const card = document.createElement('div');
-        card.className = 'cart-item';
-        card.innerHTML = `
-          <img src="${p.gridImage}" alt="${p.type}">
-          <div class="info">
-            <h3>${p.type}${p.pattern}</h3>
-            <p class="price">${p.price} PLN</p>
-            <div class="controls">
-              <button class="qty-btn" data-id="${id}" data-change="-1">−</button>
-              <span class="qty">${qty}</span>
-              <button class="qty-btn" data-id="${id}" data-change="1">＋</button>
-            </div>
-            <button class="remove-btn" data-id="${id}">Usuń</button>
-          </div>
-        `;
-        itemsWrap.appendChild(card);
-      });
-    
-      // Prawa kolumna: podsumowanie
-      sumWrap.innerHTML = `
-        <h2>Podsumowanie</h2>
-        <p class="summary-line">Łącznie: <strong>${total} PLN</strong></p>
-        <button class="btn btn-primary btn-block">Przejdź do dostawy</button>
-        <hr>
-        <a href="konto.html" class="summary-link">Zaloguj się</a>
-        <a href="" class="summary-link">Zarejestruj się</a>
-        <a href="" class="summary-link">Regulamin sklepu</a>
-      `;
-    
-      // Podłącz eventy
-      itemsWrap.querySelectorAll('.qty-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const id     = btn.dataset.id;
-          const change = Number(btn.dataset.change);
-          const item   = getCart().find(x => x.id === id);
-          updateQuantity(id, item.qty + change);
-          renderCart();
-        });
-      });
-      itemsWrap.querySelectorAll('.remove-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          removeFromCart(btn.dataset.id);
-          renderCart();
-        });
-      });
-    }
-    </script>
+  
+<script>
+document.addEventListener('DOMContentLoaded', renderCart);
+
+function renderCart() {
+  const cart = (window.getCart && typeof window.getCart === 'function') ? getCart() : (window.Cart && typeof window.Cart.getAll === 'function' ? window.Cart.getAll() : []);
+  const itemsWrap = document.getElementById('cartItems');
+  const sumWrap   = document.getElementById('cartSummary');
+  if(!itemsWrap){ console.warn('cartItems element not found'); }
+  if(!sumWrap){ console.warn('cartSummary element not found'); }
+  itemsWrap && (itemsWrap.innerHTML = '');
+  sumWrap && (sumWrap.innerHTML   = '');
+
+  let total = 0;
+
+  if(!cart || cart.length === 0){
+    if(itemsWrap) itemsWrap.innerHTML = `<div class="cart-empty"><p>Twój koszyk jest pusty.</p><a href="jerseys.html" class="btn btn-primary">Przejdź do sklepu</a></div>`;
+    if(sumWrap) sumWrap.innerHTML = `<h2>Podsumowanie</h2><p class="summary-line">Łącznie: <strong>0 PLN</strong></p>`;
+    return;
+  }
+
+  function productImageSrc(p){
+    if(!p) return '';
+    return p.gridImage || p.mainImage || p.image || (p.images && p.images[0]) || '';
+  }
+
+  cart.forEach(item => {
+    const id = String(item.id);
+    const size = item.size || '';
+    const qty = Number(item.qty) || 0;
+    const p = (window.PRODUCTS || []).find(x => String(x.id) === id);
+    if(!p) return;
+    const lineTotal = (p.price || 0) * qty;
+    total += lineTotal;
+
+    const card = document.createElement('div');
+    card.className = 'cart-item';
+    const imgSrc = productImageSrc(p) || 'icons/produkt-10.png';
+    card.innerHTML = `
+      <img src="${imgSrc}" alt="${p.name||p.type||''}">
+      <div class="cart-item-info">
+        <h3>${p.name || p.type || ''}</h3>
+        <p class="price">${p.price} PLN</p>
+        <p class="cart-size">Rozmiar: <strong>${size || '—'}</strong></p>
+        <div class="cart-item-controls">
+          <button class="qty-btn" data-id="${id}" data-size="${size}" data-change="-1">−</button>
+          <span class="qty">${qty}</span>
+          <button class="qty-btn" data-id="${id}" data-size="${size}" data-change="1">＋</button>
+        </div>
+        <button class="remove-btn" data-id="${id}" data-size="${size}">Usuń</button>
+      </div>
+    `;
+    itemsWrap && itemsWrap.appendChild(card);
+  });
+
+  if(sumWrap) sumWrap.innerHTML = `
+    <h2>Podsumowanie</h2>
+    <p class="summary-line">Łącznie: <strong>${total} PLN</strong></p>
+    <button class="btn btn-primary" id="checkoutBtn">Przejdź do płatności</button>
+  `;
+
+  // attach handlers
+  itemsWrap && itemsWrap.querySelectorAll('.qty-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      const size = btn.dataset.size || '';
+      const change = Number(btn.dataset.change) || 0;
+      const current = (window.Cart && window.Cart.getAll) ? (window.Cart.getAll().find(x=>String(x.id)===String(id) && String(x.size||'')===String(size||'')) || {}) : {};
+      const newQty = Math.max(0, (Number(current.qty)||0) + change);
+      if(window.Cart && typeof window.Cart.setQty === 'function'){
+        window.Cart.setQty(id, size, newQty);
+      } else {
+        const key = 'LK_CART';
+        const c = JSON.parse(localStorage.getItem(key) || '[]');
+        const it = c.find(i => String(i.id) === String(id) && String(i.size||'') === String(size||''));
+        if(it){ it.qty = newQty; localStorage.setItem(key, JSON.stringify(c)); }
+      }
+      renderCart();
+    });
+  });
+
+  itemsWrap && itemsWrap.querySelectorAll('.remove-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      const size = btn.dataset.size || '';
+      if(window.removeFromCart && typeof window.removeFromCart === 'function'){
+        removeFromCart(id, size);
+      } else if(window.Cart && typeof window.Cart.remove === 'function'){
+        window.Cart.remove(id, size);
+      } else {
+        const key = 'LK_CART';
+        const c = JSON.parse(localStorage.getItem(key) || '[]');
+        const newC = c.filter(i => !(String(i.id) === String(id) && String(i.size||'') === String(size||'')));
+        localStorage.setItem(key, JSON.stringify(newC));
+      }
+      renderCart();
+    });
+  });
+
+}
+</script>
+
     
 
 
@@ -239,6 +275,7 @@ document.addEventListener('DOMContentLoaded', renderCart);
     <button onclick="topFunction()" id="Btn" title="Go to top">^</button>
   </main>
 -->
+<script src="js/compat.js"></script> 
 <script src="js/script.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/cart.js"></script>

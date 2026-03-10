@@ -59,6 +59,16 @@
     </nav>
     
   </header>
+  <!--
+  <nav class="breadcrumbs" style="background-color: grey; height: 30px; margin-bottom: -2px;">
+    <span class="separator" style="color: white; font-size: 15px;">Sklep aktualnie nieczynny</span>
+  </nav>
+-->
+
+  
+<div class="store-alert" role="status" aria-live="polite">
+  Sklep aktualnie nieczynny
+</div>
 
   <nav class="breadcrumbs">
     <a href="index.html"><i class="icon-home"></i></a>
@@ -84,6 +94,7 @@
         <div><input type="checkbox" name="type" value="bluza"><label>Bluza</label></div>
         <div><input type="checkbox" name="type" value="spodenki"><label>Spodenki</label></div>
         <div><input type="checkbox" name="type" value="akcesoria"><label>Akcesoria</label></div>
+        <div><input type="checkbox" name="type" value="gadka"><label>Kolekcja "ALE GADKA"</label></div>
       </div>
       <div class="filter-section">
         <h3>Rozmiar</h3>
@@ -135,10 +146,60 @@
   <footer class="site-footer">© 2025 Linux_kings</footer>
   <script src="js/products-loader.js"></script>
   <script src="js/products.js"></script>
+  <script src="js/compat.js"></script> 
   <script src="js/script.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/mobile.js"></script>
+
+  <!-- STORE MODAL: wklej przed </body> -->
+<div id="store-modal" class="store-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="storeModalTitle">
+  <div class="store-modal__overlay" data-store-close></div>
+  <div class="store-modal__window" role="document">
+    <button class="store-modal__close" aria-label="Zamknij" data-store-close>✕</button>
+    <div class="store-modal__content">
+      <h2 id="storeModalTitle">Sklep aktualnie nieczynny</h2>
+      <p>Przepraszamy — pracujemy nad dostępnością sklepu. Zapraszamy później.</p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    // elementy
+    const modal = document.getElementById('store-modal');
+    const closeBtns = modal ? modal.querySelectorAll('[data-store-close]') : [];
+  
+    function openModal(){
+      if(!modal) return;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.documentElement.classList.add('modal-open');
+      // focus do przycisku zamknij (bez przewijania)
+      const close = modal.querySelector('.store-modal__close');
+      if(close && typeof close.focus === 'function'){
+        try { close.focus({ preventScroll: true }); } catch(e) { close.focus(); }
+      }
+    }
+    function closeModal(){
+      if(!modal) return;
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+      document.documentElement.classList.remove('modal-open');
+    }
+  
+    // eventy zamykania
+    closeBtns.forEach(b => b.addEventListener('click', function(e){ e.preventDefault(); closeModal(); }));
+    if(modal){
+      const overlay = modal.querySelector('.store-modal__overlay');
+      if(overlay) overlay.addEventListener('click', closeModal);
+    }
+  
+    // pokaż modal zawsze przy wejściu (na stronie sklepu)
+    openModal();
+  });
+  </script>
 
 </body>
 </html>
