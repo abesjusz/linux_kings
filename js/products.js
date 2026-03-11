@@ -180,7 +180,7 @@ window.PRODUCTS = [
        // description: "Uniwersalny Longsleeve wykonany z polietsrowych włókien termoaktywnych, które gwarantują oddychalność i odprowadzanie wilgoci z powierzchni skóry. Struktura materiału w postaci drobnych oczek zapewnia idealną wentylację ciała.",
         longDescription: "Uniwersalny Longsleeve wykonany z polietsrowych włókien termoaktywnych, które gwarantują oddychalność i odprowadzanie wilgoci z powierzchni skóry. Struktura materiału w postaci drobnych oczek zapewnia idealną wentylację ciała.",
         dimensions: { "S":[48,68], "M":[51,70], "L":[54,72], "XL":[57,74] },
-        material: ["siatka","skład 94% poliester, 6% elastan","gramatura 110 g/m2"],
+        material: ["skład 100% poliester","gramatura 140 g/m2","struktura oczek ułatwia szybkie odprowadzanie wilgoci na zewnątrz"],
         sizeTable: {
           title: "Longsleeve uniwersalny",
           columns: ["Rozmiar","S","M","L","XL","XXL","XXXL"],
@@ -275,7 +275,7 @@ window.PRODUCTS = [
         //description: "Biegowy t-shirt ultra lekki w całości wykonany z elastycznej siatki. Koszulka jest przewiewna, lekka oraz doskonale oddychająca. Dzięki dużej ilości elastanu koszulka idealnie dopasowuje się do ciała, nie krępując przy tym ruchów. Zastosowane siatki gwarantuje stałą wentylację i cyrkulację powietrza między skórą a materiałem i schnięciem koszulki jeszcze na ciele.",
         longDescription: "Koszulka wykonana z technicznych włókien poliestrowych o właściwościach oddychających, szybkoschnących, wentylujących.",
         dimensions: { "S":[48,68], "M":[51,70], "L":[54,72], "XL":[57,74] },
-        material: ["siatka","skład 94% poliester, 6% elastan","gramatura 110 g/m2"],
+        material: ["skład 100% poliester","gramatura 140 g/m2","struktura oczek ułatwia szybkie odprowadzanie wilgoci na zewnątrz"],
         sizeTable: {
           title: "T-shirt uniwersalny",
           columns: ["Rozmiar","S","M","L","XL","XXL","XXXL"],
